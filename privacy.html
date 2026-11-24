@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy policy · Capture for Mac</title>
+  <meta name="description" content="Capture keeps what you capture on your Mac. No account, no analytics, nothing sent to us.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Host+Grotesk:wght@400;500&family=Atkinson+Hyperlegible+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="doc-head">
+    <nav class="nav container" aria-label="Page">
+      <a class="wordmark" href="./">Capture</a>
+      <a class="nav__action" href="./">Back to Capture</a>
+    </nav>
+  </header>
+
+  <main id="main" class="doc container">
+    <h1>Privacy policy</h1>
+    <p class="doc__meta">Effective 24 November 2026</p>
+
+    <p class="lead">Capture keeps what you capture on your Mac. It has no account, no analytics and no ads, and it sends nothing to us.</p>
+
+    <h2>What Capture stores, and where</h2>
+    <ul>
+      <li><strong>Your captures.</strong> Notes, screenshots, screen recordings, the text read from screenshots and recording transcripts are saved in <span class="measured">~/Documents/Capture</span>. If you pick a folder for screenshots, they are saved there instead.</li>
+      <li><strong>Recordings you share to Claude.</strong> A copy of the video, six still frames and the transcript are saved in <span class="measured">~/Documents/Capture/shared</span>.</li>
+      <li><strong>Settings.</strong> The screenshot folder you picked, your recent folders and whether Capture opens at login are kept in Capture’s preferences on your Mac.</li>
+    </ul>
+    <p>You can open, move or delete any of these files in Finder at any time. Deleting the app does not delete your Documents folder.</p>
+
+    <h2>Permissions, and when they are used</h2>
+    <ul>
+      <li><strong>Screen Recording:</strong> only when you drag over an area or start a recording.</li>
+      <li><strong>Microphone:</strong> only while the mic button is on or a recording is running.</li>
+      <li><strong>Speech Recognition:</strong> to turn your voice into text with Apple’s speech engine, which runs on your Mac.</li>
+    </ul>
+    <p>Text in screenshots is read on your Mac with Apple’s Vision framework. Capture also uses macOS to open at login, which you can turn off from its menu bar icon.</p>
+
+    <h2>What leaves your Mac</h2>
+    <p>Capture itself sends nothing over the internet. It has no servers, no sign-in, no analytics, no crash reporting and no advertising, and it does not write what you capture into the system log.</p>
+    <p><strong>Sharing to Claude happens only when you ask.</strong> When you click Claude on a recording and pick where it goes, Capture copies a message to your clipboard and opens the Claude app. Anything you then send in Claude is handled by Anthropic under <a class="link" href="https://www.anthropic.com/legal/privacy">Anthropic’s privacy policy</a>.</p>
+    <p>To list your recent Claude Code sessions, Capture reads each session’s title, project folder and last-used time from the Claude app’s files on your Mac. It does not read your conversations, and it sends none of this anywhere.</p>
+    <p>The speech and text features are part of macOS, which <a class="link" href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a> covers.</p>
+
+    <h2>Children</h2>
+    <p>Capture is not directed at children, and it collects no personal information from anyone.</p>
+
+    <h2>Changes</h2>
+    <p>If a future version of Capture sends anything off your Mac, this page will say so before that version is released, and the date above will change.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about privacy: <a class="link" href="https://github.com/akashdevkumar/capture-site/issues">open an issue on GitHub</a>. Capture is made by Akash Gidde.</p>
+  </main>
+
+  <footer class="foot">
+    <div class="container foot__row">
+      <p class="foot__mark">Capture</p>
+      <nav aria-label="Footer">
+        <a href="./">Home</a>
+        <a href="privacy.html" aria-current="page">Privacy</a>
+      </nav>
+      <p class="foot__legal">Made by Akash Gidde. © 2026.</p>
+    </div>
+  </footer>
+</body>
+</html>
