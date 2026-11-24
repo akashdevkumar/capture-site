@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capture for Mac</title>
+  <meta name="description" content="Capture is a Mac menu bar app that turns a screen recording into frames and a transcript your coding agent can read.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Host+Grotesk:wght@400;500&family=Atkinson+Hyperlegible+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Hide what Motion will reveal, only when motion is welcome; motion.js removes this if it cannot load.
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("motion");
+  </script>
+  <script type="module" src="motion.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="hero" id="top">
+    <div class="hero__art" aria-hidden="true">
+      <img src="images/landscape.svg" alt="" width="1600" height="900">
+    </div>
+
+    <nav class="nav container" aria-label="Page">
+      <a class="wordmark" href="#top">Capture</a>
+      <div class="nav__links">
+        <a href="#record">Record</a>
+        <a href="#handoff">The hand-off</a>
+        <a href="#needs">What it needs</a>
+      </div>
+      <a class="nav__action" href="#get">Get Capture</a>
+    </nav>
+
+    <div class="hero__content container" id="main">
+      <h1 data-reveal="rise">Record the bug. <br>Your agent reads it.</h1>
+      <p class="lead" data-reveal="rise">Capture turns a screen recording into frames and words an agent reads.</p>
+      <div class="actions" data-reveal="rise">
+        <a class="btn btn--primary" href="#get">Coming to the Mac App Store</a>
+        <a class="link" href="#handoff">See what it sends</a>
+      </div>
+    </div>
+
+    <figure class="bar hero__bar" data-reveal="float">
+      <img src="images/bar-ready-to-share.png" width="700" height="143" alt="The Capture bar holding a Video chip with a Claude button, an Image chip and the note: Sign in fails with no error in the console.">
+    </figure>
+  </header>
+
+  <main>
+    <section class="section" id="record" aria-labelledby="record-title">
+      <div class="container split">
+        <div class="split__text" data-reveal="rise">
+          <h2 id="record-title">Drag over the part that breaks</h2>
+          <ul class="facts">
+            <li><strong>Any area.</strong> Drag a box, or click once for the whole screen.</li>
+            <li><strong>Your voice and the Mac’s.</strong> The mic and the app’s sound are both kept.</li>
+            <li><strong>Out of the way.</strong> The bar docks beside the area with a timer and a stop button.</li>
+          </ul>
+        </div>
+        <figure class="shot" data-reveal="rise">
+          <img src="images/recording-docked.png" width="680" height="440" alt="Capture recording a sign-in form: a soft frame marked REC 0:03 around the form, and the Capture bar docked below it with a red timer and stop button.">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="handoff" aria-labelledby="handoff-title">
+      <div class="container">
+        <div class="head head--center" data-reveal="rise">
+          <h2 id="handoff-title">What your agent gets</h2>
+          <p class="lead">An agent can’t play a video. So Capture sends what it can read.</p>
+        </div>
+
+        <div class="diff" data-reveal="rise">
+          <div class="diff__side">
+            <p class="diff__label">Without Capture, you type</p>
+            <p class="diff__row diff__row--minus"><span class="diff__mark" aria-hidden="true">−</span><span class="measured">sign in is broken, not sure why</span></p>
+          </div>
+          <div class="diff__side">
+            <p class="diff__label">With Capture, it receives</p>
+            <ol class="frames" aria-label="Six frames from a 19 second recording">
+              <li><img src="images/frame-1-at-0m01s.png" width="480" height="300" alt="The sign-in form, idle."><span class="measured">0:01</span></li>
+              <li><img src="images/frame-2-at-0m04s.png" width="480" height="300" alt="The Sign in button pressed."><span class="measured">0:04</span></li>
+              <li><img src="images/frame-3-at-0m08s.png" width="480" height="300" alt="The error: Something went wrong. Please try again."><span class="measured">0:08</span></li>
+              <li><img src="images/frame-4-at-0m11s.png" width="480" height="300" alt="The Sign in button pressed again."><span class="measured">0:11</span></li>
+              <li><img src="images/frame-5-at-0m14s.png" width="480" height="300" alt="The same error again."><span class="measured">0:14</span></li>
+              <li><img src="images/frame-6-at-0m18s.png" width="480" height="300" alt="The form idle after the error."><span class="measured">0:18</span></li>
+            </ol>
+            <p class="diff__row diff__row--plus"><span class="diff__mark" aria-hidden="true">+</span><span><span class="diff__key">What you said</span><span class="measured transcript">“I click sign in. It says signing in, and then it just says something went wrong, nothing in the console.”</span></span></p>
+            <p class="diff__row diff__row--plus"><span class="diff__mark" aria-hidden="true">+</span><span><span class="diff__key">The video, kept beside them</span><span class="measured">~/Documents/Capture/shared/2026-11-23 at 10.43.17/recording.mov</span></span></p>
+          </div>
+        </div>
+        <p class="caption">A real 19 second recording. The transcript is made on your Mac.</p>
+      </div>
+    </section>
+
+    <section class="section" id="share" aria-labelledby="share-title">
+      <div class="container">
+        <div class="head" data-reveal="rise">
+          <h2 id="share-title">Sent where you work</h2>
+          <p class="lead">Click Claude on the recording, then pick where it goes.</p>
+        </div>
+        <ol class="ways">
+          <li data-reveal="rise"><span class="ways__n measured" aria-hidden="true">1</span><h3>Open a session</h3><p>Pick one of your recent Claude Code sessions. It comes to the front; paste and send.</p></li>
+          <li data-reveal="rise"><span class="ways__n measured" aria-hidden="true">2</span><h3>Start a new one</h3><p>Pick a project folder. A new session opens with the message already typed.</p></li>
+          <li data-reveal="rise"><span class="ways__n measured" aria-hidden="true">3</span><h3>Copy it</h3><p>Paste the frames and transcript into any chat or tool.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="bar" aria-labelledby="bar-title">
+      <div class="container rows-layout">
+        <div class="head rows-layout__head" data-reveal="rise">
+          <h2 id="bar-title">Notes, screenshots and voice</h2>
+          <p class="lead">Not every capture is a bug. The same bar takes all of it.</p>
+        </div>
+        <div class="rows-layout__body">
+          <figure class="bar bar--inset" data-reveal="rise">
+            <img src="images/bar-screenshot-and-record.png" width="700" height="143" alt="The Capture bar with an Image chip reading its text, the record button armed, and the line: Save screenshots to Capture.">
+          </figure>
+          <dl class="rows">
+            <div data-reveal="rise"><dt>Drag anywhere</dt><dd>While the bar is open, each drag on the screen adds a screenshot.</dd></div>
+            <div data-reveal="rise"><dt>Talk instead</dt><dd>The mic types your words into the bar as you speak.</dd></div>
+            <div data-reveal="rise"><dt>Text in pictures</dt><dd>Words in a screenshot are read and saved with it.</dd></div>
+            <div data-reveal="rise"><dt>Any folder</dt><dd>Save screenshots where your project lives, or keep them in Capture.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="needs" aria-labelledby="needs-title">
+      <div class="container">
+        <div class="head head--split" data-reveal="rise">
+          <h2 id="needs-title">What it needs</h2>
+          <p class="lead">No account. Speech and text are read on your Mac.</p>
+        </div>
+        <table class="spec">
+          <thead><tr><th scope="col">Needs</th><th scope="col">Why</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">macOS 26 or later</th><td>The on-device speech engine</td></tr>
+            <tr><th scope="row">Screen Recording</th><td>Screenshots and recordings</td></tr>
+            <tr><th scope="row">Microphone</th><td>Voice notes, and your voice in recordings</td></tr>
+            <tr><th scope="row">Speech Recognition</th><td>Live typing and transcripts</td></tr>
+            <tr><th scope="row">A place for files</th><td><span class="measured">~/Documents/Capture</span>, or a folder you pick</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="get" id="get" aria-labelledby="get-title">
+      <div class="get__art" aria-hidden="true"><img src="images/landscape.svg" alt="" width="1600" height="900" loading="lazy"></div>
+      <div class="container get__inner" data-reveal="rise">
+        <h2 id="get-title">Coming to the Mac App Store</h2>
+        <p class="lead">It lives in your menu bar and opens when you log in.</p>
+        <p><span class="fill" data-fill="store-link">Store link at launch</span></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="container foot__row">
+      <p class="foot__mark">Capture</p>
+      <nav aria-label="Footer">
+        <a href="#record">Record</a>
+        <a href="#handoff">The hand-off</a>
+        <a href="#needs">What it needs</a>
+      </nav>
+      <p class="foot__legal">Made by Akash Gidde. © 2026.</p>
+    </div>
+  </footer>
+</body>
+</html>
