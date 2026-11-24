@@ -96,8 +96,23 @@ a { color: inherit; }
 .hero h1 { font-size: clamp(2.6rem, 1.4rem + 3.6vw, 4rem); line-height: 1.03; text-shadow: 0 1px 24px rgb(48 38 80 / 0.25); }
 .hero .lead { margin: 20px auto 0; color: var(--on-art); max-width: 36rem; text-shadow: 0 1px 16px rgb(48 38 80 / 0.3); }
 .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 32px; }
-.hero__bar { margin: auto 0 clamp(28px, 5vw, 56px); padding: 0 var(--gutter); }
-.hero__bar img { width: min(700px, 100%); border-radius: 28px; box-shadow: 0 18px 50px rgb(48 38 80 / 0.28); }
+/* The bar overlaps the painting's lower edge: half on the art, half on the page. */
+.hero__bar { position: relative; z-index: 2; display: flex; justify-content: center; margin: calc(-1 * clamp(36px, 4.2vw, 62px)) 0 0; padding: 0 var(--gutter); }
+.hero__bar img { width: min(700px, 100%); border-radius: 28px; box-shadow: 0 24px 60px rgb(109 85 189 / 0.28), 0 4px 14px rgb(48 38 80 / 0.12); }
+.hero__panel { padding-bottom: clamp(64px, 7vw, 104px); }
+
+/* Frosted announcement pill over the painting. */
+.announce { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 26px; padding: 7px 14px; border-radius: var(--pill); background: rgb(16 15 18 / 0.45); -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px); color: #fff; font-size: 0.8125rem; text-decoration: none; transition: background-color 0.3s var(--ease-out); }
+.announce:hover { background: rgb(16 15 18 / 0.6); }
+
+/* One hand-set phrase: an editorial serif italic against the sans. */
+.serif { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400; letter-spacing: 0; white-space: nowrap; }
+
+/* Four real facts under the hero. */
+.proof { list-style: none; margin: clamp(28px, 4vw, 48px) auto 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.proof li { display: grid; gap: 6px; align-content: start; padding: 22px 24px; border-radius: var(--radius-xl); background: var(--accent-muted); }
+.proof strong { font-size: clamp(1.4rem, 1.1rem + 0.8vw, 1.75rem); font-weight: 500; letter-spacing: -0.01em; line-height: 1.1; }
+.proof span { color: var(--muted-strong); font-size: 0.875rem; }
 
 /* Sections. */
 .section { padding-block: var(--section); }
@@ -176,7 +191,22 @@ a { color: inherit; }
 
 /* Closing indigo band with the footer inside it. */
 .close { padding-top: var(--section); }
-.close__band { background: radial-gradient(ellipse 70% 60% at 50% 0%, #4a3e8a, transparent 70%), linear-gradient(180deg, var(--night), var(--night-deep)); color: #fff; border-radius: clamp(32px, 6vw, 80px) clamp(32px, 6vw, 80px) 0 0; padding: clamp(72px, 9vw, 120px) 0 40px; }
+/* The hero's valley at night: the same painting darkened to indigo, with a few soft stars and warm horizon light. */
+.close__band { position: relative; overflow: hidden; isolation: isolate; background: var(--night-deep); color: #fff; border-radius: clamp(32px, 6vw, 80px) clamp(32px, 6vw, 80px) 0 0; padding: clamp(72px, 9vw, 120px) 0 40px; }
+.close__art { position: absolute; inset: 0; z-index: -2; }
+.close__art img { position: absolute; inset: 0; }
+.close__art img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; filter: brightness(0.5) saturate(0.7); }
+.close__art::after { content: ""; position: absolute; inset: 0; background: #2a1f63; mix-blend-mode: color; opacity: 0.75; }
+.close__band::before { content: ""; position: absolute; inset: 0; z-index: -1; background:
+  radial-gradient(2px 2px at 12% 18%, #fff 50%, transparent 51%),
+  radial-gradient(1.5px 1.5px at 22% 32%, rgb(255 255 255 / 0.8) 50%, transparent 51%),
+  radial-gradient(2px 2px at 38% 12%, rgb(255 255 255 / 0.9) 50%, transparent 51%),
+  radial-gradient(1.5px 1.5px at 57% 26%, rgb(255 255 255 / 0.7) 50%, transparent 51%),
+  radial-gradient(2px 2px at 71% 14%, #fff 50%, transparent 51%),
+  radial-gradient(1.5px 1.5px at 84% 30%, rgb(255 255 255 / 0.8) 50%, transparent 51%),
+  radial-gradient(1.5px 1.5px at 92% 10%, rgb(255 255 255 / 0.7) 50%, transparent 51%),
+  radial-gradient(ellipse 60% 22% at 50% 62%, rgb(255 179 120 / 0.22), transparent 70%),
+  linear-gradient(180deg, rgb(30 22 70 / 0.5) 0%, rgb(30 22 70 / 0.15) 45%, rgb(20 15 45 / 0.85) 100%); }
 .close__inner { text-align: center; }
 .close__inner h2 { font-size: clamp(2rem, 1.3rem + 2vw, 3rem); margin-bottom: 28px; }
 .foot { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: clamp(64px, 8vw, 104px); padding-top: 28px; border-top: 1px solid rgb(255 255 255 / 0.12); color: #eaeaea; font-size: 0.875rem; }
@@ -213,6 +243,7 @@ a { color: inherit; }
   .card { min-height: 0; }
   .card h3 { margin-top: 20px; }
   .frames { grid-template-columns: repeat(3, 1fr); }
+  .proof { grid-template-columns: repeat(2, 1fr); }
   .nav__links { display: none; }
   .nav__inner { justify-content: space-between; }
 }
@@ -228,4 +259,6 @@ a { color: inherit; }
   .waitlist { flex-direction: column; border-radius: var(--radius-xl); }
   .waitlist__field { padding: 10px 12px; }
   .foot__legal { margin-left: 0; }
+  .proof li { padding: 18px; }
+  .proof strong { font-size: 1.2rem; }
 }

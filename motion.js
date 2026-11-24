@@ -25,7 +25,7 @@ if (root.classList.contains("motion")) {
     if (bar) animate(bar, { opacity: [0, 1], y: [60, 0], scale: [0.96, 1] }, { type: "spring", stiffness: 90, damping: 16, delay: 0.45 });
 
     // Everything else rises in once, as it scrolls into view.
-    document.querySelectorAll("main [data-reveal], footer [data-reveal]").forEach((el) => {
+    document.querySelectorAll(".proof [data-reveal], main [data-reveal], footer [data-reveal]").forEach((el) => {
       inView(el, () => {
         animate(el, { opacity: [0, 1], y: [28, 0] }, { duration: 0.7, ease: [0.16, 1, 0.3, 1] });
       }, { margin: "0px 0px -10% 0px" });

@@ -7,7 +7,7 @@
   <meta name="description" content="Capture is a Mac menu bar app that turns a screen recording into frames and a transcript your coding agent can read. Everything happens on your Mac.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>
     // Hide what Motion will reveal, only when motion is welcome; motion.js removes this if it cannot load.
@@ -40,17 +40,24 @@
         <img src="images/paint-hero.jpg" alt="" width="2400" height="1205">
       </div>
       <div class="hero__content" id="main">
-        <h1 data-reveal="rise">Record the bug.<br>Your agent reads it.</h1>
+        <a class="announce" href="#get" data-reveal="rise">Launching soon for macOS <span aria-hidden="true">·</span> Join the waitlist <span aria-hidden="true">→</span></a>
+        <h1 data-reveal="rise">Record the bug.<br>Your agent <em class="serif">reads it.</em></h1>
         <p class="lead" data-reveal="rise">Capture turns a screen recording into frames and words your coding agent can read. All on your Mac.</p>
         <div class="actions" data-reveal="rise">
           <a class="btn btn--primary" href="#get">Join the waitlist</a>
           <a class="btn btn--glass" href="#handoff">See what it sends</a>
         </div>
       </div>
-      <figure class="hero__bar" data-reveal="float">
-        <img src="images/bar-ready-to-share.png" width="700" height="143" alt="The Capture bar holding a Video chip with a Claude button, an Image chip and the note: Sign in fails with no error in the console.">
-      </figure>
     </div>
+    <figure class="hero__bar" data-reveal="float">
+      <img src="images/bar-ready-to-share.png" width="700" height="143" alt="The Capture bar holding a Video chip with a Claude button, an Image chip and the note: Sign in fails with no error in the console.">
+    </figure>
+    <ul class="proof container" aria-label="Capture in numbers">
+      <li data-reveal="rise"><strong>1.2 s</strong><span>to your first words when you dictate</span></li>
+      <li data-reveal="rise"><strong>6 frames</strong><span>plus a transcript from a 19 second recording</span></li>
+      <li data-reveal="rise"><strong>0 accounts</strong><span>nothing to sign up for</span></li>
+      <li data-reveal="rise"><strong>100% on your Mac</strong><span>speech and text are read on device</span></li>
+    </ul>
   </header>
 
   <main>
@@ -203,8 +210,9 @@
 
   <footer class="close">
     <div class="close__band">
+      <div class="close__art" aria-hidden="true"><img src="images/paint-hero.jpg" alt="" width="2400" height="1205" loading="lazy"></div>
       <div class="container close__inner" data-reveal="rise">
-        <h2>Record the next bug.</h2>
+        <h2>Record the <em class="serif">next</em> bug.</h2>
         <a class="btn btn--light" href="#get">Join the waitlist</a>
       </div>
       <div class="container foot">
